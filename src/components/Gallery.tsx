@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Camera } from 'lucide-react';
-import cafeExterior1 from '@/assets/cafe-exterior-1.jpg';
+import cafeInteriorNew from '@/assets/cafe-interior-new.jpg';
 import cafeMain from '@/assets/cafe-main.jpg';
 import cafeDetail1 from '@/assets/cafe-detail-1.jpg';
 import cafeBar from '@/assets/cafe-bar.jpg';
@@ -11,8 +11,8 @@ export function Gallery() {
 
   const images = [
     {
-      src: cafeExterior1,
-      alt: language === 'ar' ? 'واجهة المقهى' : language === 'fr' ? 'Façade du café' : 'Café exterior',
+      src: cafeInteriorNew,
+      alt: language === 'ar' ? 'داخل مقهى طنجيس' : language === 'fr' ? 'Intérieur Café Tingis' : 'Café Tingis interior',
     },
     {
       src: cafeDetail1,
