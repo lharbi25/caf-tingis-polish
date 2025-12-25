@@ -4,35 +4,36 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export function Testimonials() {
   const { t, language } = useLanguage();
 
+  // Realistic local testimonials - believable Moroccan reviews
   const testimonials = [
     {
-      name: 'Marie L.',
-      location: 'Paris, France',
+      name: language === 'ar' ? 'محمد ب.' : 'Mohammed B.',
+      location: language === 'ar' ? 'طنجة' : language === 'fr' ? 'Tanger' : 'Tangier',
       text: language === 'fr' 
-        ? "Un voyage dans le temps! L'atmosphère authentique et le café délicieux m'ont transportée dans le Tanger d'antan."
+        ? "Mon café du quartier. Chaque matin, je prends mon nous-nous ici depuis des années."
         : language === 'en'
-        ? "A journey through time! The authentic atmosphere and delicious coffee transported me to old Tangier."
-        : "رحلة عبر الزمن! الأجواء الأصيلة والقهوة اللذيذة نقلتني إلى طنجة القديمة.",
+        ? "My neighborhood café. Every morning, I've been having my nous-nous here for years."
+        : "مقهى الحي ديالي. كل صباح، كنشرب النص نص هنا من سنين.",
       rating: 5,
     },
     {
-      name: 'Ahmed B.',
-      location: 'Casablanca, Maroc',
+      name: language === 'ar' ? 'سعيد م.' : 'Said M.',
+      location: language === 'ar' ? 'الرباط' : 'Rabat',
       text: language === 'fr'
-        ? "Le meilleur nous-nous de Tanger! Un lieu chargé d'histoire où l'on se sent chez soi."
+        ? "J'ai découvert ce café par hasard en visitant Tanger. L'ambiance authentique m'a conquis."
         : language === 'en'
-        ? "The best nous-nous in Tangier! A place full of history where you feel at home."
-        : "أفضل نص نص في طنجة! مكان مليء بالتاريخ تشعر فيه وكأنك في بيتك.",
+        ? "I discovered this café by chance while visiting Tangier. The authentic atmosphere won me over."
+        : "لقيت هذا المقهى بالصدفة ملي زرت طنجة. الجو الأصيل عجبني بزاف.",
       rating: 5,
     },
     {
-      name: 'James W.',
-      location: 'London, UK',
+      name: language === 'ar' ? 'فاطمة ز.' : 'Fatima Z.',
+      location: language === 'ar' ? 'طنجة' : language === 'fr' ? 'Tanger' : 'Tangier',
       text: language === 'fr'
-        ? "Incontournable à Tanger. Le personnel est accueillant et le thé à la menthe est parfait."
+        ? "L'atay est excellent et l'ambiance rappelle le Tanger d'autrefois. Simple et authentique."
         : language === 'en'
-        ? "A must-visit in Tangier. The staff is welcoming and the mint tea is perfect."
-        : "زيارة لا بد منها في طنجة. الموظفون ودودون والشاي بالنعناع مثالي.",
+        ? "The atay is excellent and the atmosphere reminds me of old Tangier. Simple and authentic."
+        : "الأتاي بنين والجو ديال زمان. بسيط وأصيل.",
       rating: 5,
     },
   ];
@@ -69,7 +70,7 @@ export function Testimonials() {
               </div>
 
               {/* Text */}
-              <p className="text-foreground/80 mb-6 leading-relaxed">
+              <p className="text-foreground/80 mb-6 leading-relaxed text-lg">
                 "{testimonial.text}"
               </p>
 
