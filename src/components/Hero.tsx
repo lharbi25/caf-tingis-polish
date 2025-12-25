@@ -63,15 +63,15 @@ export function Hero() {
           {t.hero.emotionalSubtitle}
         </p>
 
-        {/* CTA Buttons - 3 action buttons */}
+        {/* CTA Buttons - 3 action buttons - Improved mobile UX */}
         <div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-16 animate-fade-in px-4"
           style={{ animationDelay: '0.8s' }}
         >
           {/* Call Now - Primary */}
           <a
             href={`tel:${phoneNumber}`}
-            className="flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-gold-dark transition-colors duration-200 min-w-[180px] justify-center text-lg"
+            className="flex items-center gap-2 px-6 sm:px-8 py-4 sm:py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-gold-dark transition-all duration-200 w-full sm:w-auto sm:min-w-[180px] justify-center text-base sm:text-lg shadow-lg hover:shadow-xl active:scale-95"
           >
             <Phone size={20} />
             {t.hero.callNow}
@@ -80,7 +80,7 @@ export function Hero() {
           {/* Reserve Table - Secondary */}
           <button
             onClick={() => scrollToSection('#reservation')}
-            className="px-8 py-4 border-2 border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-colors duration-200 min-w-[180px] text-lg"
+            className="px-6 sm:px-8 py-4 sm:py-4 border-2 border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-200 w-full sm:w-auto sm:min-w-[180px] text-base sm:text-lg active:scale-95"
           >
             {t.hero.reserveTable}
           </button>
@@ -88,7 +88,7 @@ export function Hero() {
           {/* Our Location - Tertiary */}
           <button
             onClick={() => scrollToSection('#contact')}
-            className="flex items-center gap-2 px-8 py-4 border border-foreground/30 text-foreground rounded-full font-medium hover:border-primary hover:text-primary transition-colors duration-200 min-w-[180px] justify-center text-lg"
+            className="flex items-center gap-2 px-6 sm:px-8 py-4 sm:py-4 border border-foreground/30 text-foreground rounded-full font-medium hover:border-primary hover:text-primary transition-all duration-200 w-full sm:w-auto sm:min-w-[180px] justify-center text-base sm:text-lg active:scale-95"
           >
             <MapPin size={20} />
             {t.hero.ourLocation}
