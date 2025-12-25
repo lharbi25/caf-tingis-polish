@@ -8,17 +8,37 @@ export interface Translations {
     gallery: string;
     contact: string;
     reserve: string;
+    callNow: string;
   };
   hero: {
     welcome: string;
     title: string;
     subtitle: string;
-    discoverMenu: string;
-    ourHistory: string;
+    emotionalSubtitle: string;
+    callNow: string;
+    reserveTable: string;
+    ourLocation: string;
     yearsLabel: string;
     foundedLabel: string;
     momentsLabel: string;
     scrollDown: string;
+  };
+  contactStrip: {
+    address: string;
+    phone: string;
+    hours: string;
+    hoursValue: string;
+    whatsapp: string;
+    viewMap: string;
+  };
+  whyChoose: {
+    sectionTitle: string;
+    sectionSubtitle: string;
+    reason1: { title: string; desc: string };
+    reason2: { title: string; desc: string };
+    reason3: { title: string; desc: string };
+    reason4: { title: string; desc: string };
+    reason5: { title: string; desc: string };
   };
   history: {
     sectionTitle: string;
@@ -59,6 +79,7 @@ export interface Translations {
   gallery: {
     sectionTitle: string;
     sectionSubtitle: string;
+    realPhotos: string;
   };
   testimonials: {
     sectionTitle: string;
@@ -76,6 +97,7 @@ export interface Translations {
     submit: string;
     orWhatsApp: string;
     whatsAppButton: string;
+    orCall: string;
   };
   footer: {
     address: string;
@@ -83,6 +105,7 @@ export interface Translations {
     hoursValue: string;
     contact: string;
     copyright: string;
+    openDaily: string;
   };
 }
 
@@ -95,24 +118,44 @@ export const translations: Record<Language, Translations> = {
       gallery: 'Galerie',
       contact: 'Contact',
       reserve: 'Réserver',
+      callNow: 'Appeler',
     },
     hero: {
-      welcome: 'Bienvenue',
+      welcome: 'Depuis 1940',
       title: 'Café Tingis',
-      subtitle: "Savourez l'héritage du café marocain",
-      discoverMenu: 'Découvrir le Menu',
-      ourHistory: 'Notre Histoire',
+      subtitle: 'Au cœur de la Médina de Tanger',
+      emotionalSubtitle: 'Un lieu de rencontre, de partage et de traditions',
+      callNow: 'Appeler maintenant',
+      reserveTable: 'Réserver une table',
+      ourLocation: 'Notre emplacement',
       yearsLabel: 'Ans',
       foundedLabel: 'Fondation',
       momentsLabel: 'Moments',
       scrollDown: 'Défiler vers le bas',
     },
+    contactStrip: {
+      address: 'Petit Socco, Médina de Tanger',
+      phone: '+212 5XX XXX XXX',
+      hours: 'Horaires',
+      hoursValue: '07:00 - 23:00',
+      whatsapp: 'WhatsApp',
+      viewMap: 'Voir sur la carte',
+    },
+    whyChoose: {
+      sectionTitle: 'Pourquoi Café Tingis?',
+      sectionSubtitle: 'Ce qui nous rend unique',
+      reason1: { title: 'Café Traditionnel', desc: 'Nous-nous, espresso et café au lait préparés avec soin' },
+      reason2: { title: 'Ambiance Tangéroise', desc: "L'authenticité du Petit Socco depuis 1940" },
+      reason3: { title: 'Confort Simple', desc: 'Une terrasse agréable pour se détendre' },
+      reason4: { title: 'Emplacement Idéal', desc: 'Au cœur de la Médina historique' },
+      reason5: { title: 'Accueil Chaleureux', desc: 'Un café de quartier où tout le monde se sent chez soi' },
+    },
     history: {
       sectionTitle: 'Notre Histoire',
-      sectionSubtitle: "Plus de 80 ans d'histoire et de passion",
-      paragraph1: "Fondé en 1940 au cœur du Petit Socco, Café Tingis est bien plus qu'un simple café. C'est un témoin vivant de l'histoire de Tanger, une ville carrefour entre l'Europe et l'Afrique.",
-      paragraph2: "Au fil des décennies, notre établissement a accueilli des artistes, des écrivains, des voyageurs et des Tangérois de toutes générations. Chaque tasse de café servie ici porte l'empreinte de cette riche histoire.",
-      paragraph3: "Aujourd'hui, nous perpétuons cette tradition d'excellence et d'hospitalité, offrant à nos visiteurs une expérience authentique du café marocain dans un cadre chargé d'histoire.",
+      sectionSubtitle: 'Plus de 80 ans de tradition et de convivialité',
+      paragraph1: "Café Tingis est un lieu simple et authentique au cœur de la Médina. Depuis 1940, nous accueillons voisins et visiteurs avec un sourire et un verre de thé.",
+      paragraph2: "Au fil des décennies, notre établissement a vu passer artistes, écrivains et Tangérois de toutes générations. Chaque tasse servie ici porte l'empreinte de cette histoire.",
+      paragraph3: "Aujourd'hui, nous continuons cette tradition d'hospitalité, offrant une expérience authentique du café marocain.",
       timeline: {
         year1: '1940',
         desc1: "Ouverture du café au Petit Socco",
@@ -146,6 +189,7 @@ export const translations: Record<Language, Translations> = {
     gallery: {
       sectionTitle: 'Galerie',
       sectionSubtitle: 'Découvrez notre univers',
+      realPhotos: 'Photos réelles de notre café',
     },
     testimonials: {
       sectionTitle: 'Témoignages',
@@ -163,6 +207,7 @@ export const translations: Record<Language, Translations> = {
       submit: 'Réserver',
       orWhatsApp: 'Ou réservez via',
       whatsAppButton: 'WhatsApp',
+      orCall: 'Ou appelez-nous directement',
     },
     footer: {
       address: 'Petit Socco, Médina de Tanger, Maroc',
@@ -170,6 +215,7 @@ export const translations: Record<Language, Translations> = {
       hoursValue: '07:00 - 23:00',
       contact: 'Contact',
       copyright: '© 2024 Café Tingis. Tous droits réservés.',
+      openDaily: 'Ouvert 7j/7',
     },
   },
   en: {
@@ -180,24 +226,44 @@ export const translations: Record<Language, Translations> = {
       gallery: 'Gallery',
       contact: 'Contact',
       reserve: 'Reserve',
+      callNow: 'Call',
     },
     hero: {
-      welcome: 'Welcome',
+      welcome: 'Since 1940',
       title: 'Café Tingis',
-      subtitle: 'Savor the heritage of Moroccan coffee',
-      discoverMenu: 'Discover Menu',
-      ourHistory: 'Our History',
+      subtitle: 'In the heart of Tangier Medina',
+      emotionalSubtitle: 'A place for gathering, sharing and traditions',
+      callNow: 'Call Now',
+      reserveTable: 'Reserve a Table',
+      ourLocation: 'Our Location',
       yearsLabel: 'Years',
       foundedLabel: 'Founded',
       momentsLabel: 'Moments',
       scrollDown: 'Scroll down',
     },
+    contactStrip: {
+      address: 'Petit Socco, Tangier Medina',
+      phone: '+212 5XX XXX XXX',
+      hours: 'Hours',
+      hoursValue: '07:00 - 23:00',
+      whatsapp: 'WhatsApp',
+      viewMap: 'View on map',
+    },
+    whyChoose: {
+      sectionTitle: 'Why Café Tingis?',
+      sectionSubtitle: 'What makes us unique',
+      reason1: { title: 'Traditional Coffee', desc: 'Nous-nous, espresso and café au lait made with care' },
+      reason2: { title: 'Tangier Atmosphere', desc: 'Petit Socco authenticity since 1940' },
+      reason3: { title: 'Simple Comfort', desc: 'A pleasant terrace to relax' },
+      reason4: { title: 'Prime Location', desc: 'In the heart of the historic Medina' },
+      reason5: { title: 'Warm Welcome', desc: 'A neighborhood café where everyone feels at home' },
+    },
     history: {
       sectionTitle: 'Our History',
-      sectionSubtitle: 'More than 80 years of history and passion',
-      paragraph1: "Founded in 1940 in the heart of Petit Socco, Café Tingis is more than just a café. It's a living witness to the history of Tangier, a crossroads city between Europe and Africa.",
-      paragraph2: "Over the decades, our establishment has welcomed artists, writers, travelers, and Tangier locals of all generations. Every cup of coffee served here carries the imprint of this rich history.",
-      paragraph3: "Today, we continue this tradition of excellence and hospitality, offering our visitors an authentic Moroccan coffee experience in a historically rich setting.",
+      sectionSubtitle: 'More than 80 years of tradition and warmth',
+      paragraph1: "Café Tingis is a simple and authentic place in the heart of the Medina. Since 1940, we welcome neighbors and visitors with a smile and a glass of tea.",
+      paragraph2: "Over the decades, our establishment has seen artists, writers, and Tangier locals of all generations. Every cup served here carries the imprint of this history.",
+      paragraph3: "Today, we continue this tradition of hospitality, offering an authentic Moroccan coffee experience.",
       timeline: {
         year1: '1940',
         desc1: "Opening at Petit Socco",
@@ -231,6 +297,7 @@ export const translations: Record<Language, Translations> = {
     gallery: {
       sectionTitle: 'Gallery',
       sectionSubtitle: 'Discover our world',
+      realPhotos: 'Real photos of our café',
     },
     testimonials: {
       sectionTitle: 'Testimonials',
@@ -248,6 +315,7 @@ export const translations: Record<Language, Translations> = {
       submit: 'Reserve',
       orWhatsApp: 'Or book via',
       whatsAppButton: 'WhatsApp',
+      orCall: 'Or call us directly',
     },
     footer: {
       address: 'Petit Socco, Medina of Tangier, Morocco',
@@ -255,6 +323,7 @@ export const translations: Record<Language, Translations> = {
       hoursValue: '07:00 - 23:00',
       contact: 'Contact',
       copyright: '© 2024 Café Tingis. All rights reserved.',
+      openDaily: 'Open 7 days a week',
     },
   },
   ar: {
@@ -265,24 +334,44 @@ export const translations: Record<Language, Translations> = {
       gallery: 'المعرض',
       contact: 'اتصل بنا',
       reserve: 'احجز',
+      callNow: 'اتصل',
     },
     hero: {
-      welcome: 'مرحبا بكم',
-      title: 'مقهى تنجيس',
-      subtitle: 'تذوق تراث القهوة المغربية',
-      discoverMenu: 'اكتشف القائمة',
-      ourHistory: 'تاريخنا',
+      welcome: 'منذ 1940',
+      title: 'مقهى طنجيس',
+      subtitle: 'في قلب المدينة القديمة بطنجة',
+      emotionalSubtitle: 'مكان للراحة والأصدقاء والتقاليد',
+      callNow: 'اتصل الآن',
+      reserveTable: 'احجز طاولتك',
+      ourLocation: 'موقعنا',
       yearsLabel: 'سنة',
       foundedLabel: 'التأسيس',
       momentsLabel: 'لحظات',
       scrollDown: 'انزل للأسفل',
     },
+    contactStrip: {
+      address: 'البيتي سوكو، المدينة القديمة، طنجة',
+      phone: '+212 5XX XXX XXX',
+      hours: 'ساعات العمل',
+      hoursValue: '07:00 - 23:00',
+      whatsapp: 'واتساب',
+      viewMap: 'اعرض على الخريطة',
+    },
+    whyChoose: {
+      sectionTitle: 'لماذا مقهى طنجيس؟',
+      sectionSubtitle: 'ما يميزنا',
+      reason1: { title: 'قهوة تقليدية', desc: 'نص نص، إسبريسو وقهوة بالحليب محضرة بعناية' },
+      reason2: { title: 'أجواء طنجاوية', desc: 'أصالة البيتي سوكو منذ 1940' },
+      reason3: { title: 'جلسة مريحة', desc: 'شرفة لطيفة للاسترخاء' },
+      reason4: { title: 'موقع ممتاز', desc: 'في قلب المدينة القديمة التاريخية' },
+      reason5: { title: 'استقبال حار', desc: 'مقهى الحي حيث يشعر الجميع بأنهم في بيتهم' },
+    },
     history: {
       sectionTitle: 'تاريخنا',
-      sectionSubtitle: 'أكثر من 80 عامًا من التاريخ والشغف',
-      paragraph1: "تأسس مقهى تنجيس عام 1940 في قلب البيتي سوكو، وهو أكثر من مجرد مقهى. إنه شاهد حي على تاريخ طنجة، المدينة الملتقى بين أوروبا وأفريقيا.",
-      paragraph2: "على مر العقود، استقبل مقهانا الفنانين والكتاب والمسافرين وأبناء طنجة من جميع الأجيال. كل فنجان قهوة يُقدم هنا يحمل بصمة هذا التاريخ الغني.",
-      paragraph3: "اليوم، نواصل تقليد التميز والضيافة، مقدمين لزوارنا تجربة قهوة مغربية أصيلة في إطار غني بالتاريخ.",
+      sectionSubtitle: 'أكثر من 80 عامًا من التقاليد والود',
+      paragraph1: "مقهى طنجيس مكان بسيط وأصيل في قلب المدينة القديمة. منذ 1940، نستقبل الجيران والزوار بابتسامة وكأس شاي.",
+      paragraph2: "على مر العقود، استقبل مقهانا الفنانين والكتاب وأبناء طنجة من جميع الأجيال. كل فنجان يُقدم هنا يحمل بصمة هذا التاريخ.",
+      paragraph3: "اليوم، نواصل تقليد الضيافة، مقدمين تجربة قهوة مغربية أصيلة.",
       timeline: {
         year1: '1940',
         desc1: "افتتاح المقهى في البيتي سوكو",
@@ -305,7 +394,7 @@ export const translations: Record<Language, Translations> = {
         nousNous: { name: 'نص نص', desc: 'نصف قهوة، نصف حليب' },
         cappuccino: { name: 'كابتشينو', desc: 'إسبريسو مع رغوة الحليب' },
         cafeAuLait: { name: 'قهوة بالحليب', desc: 'قهوة بالحليب الساخن' },
-        theMenthe: { name: 'شاي بالنعناع', desc: 'شاي أخضر بالنعناع الطازج' },
+        theMenthe: { name: 'أتاي بالنعناع', desc: 'شاي أخضر بالنعناع الطازج' },
         theVert: { name: 'شاي أخضر', desc: 'شاي أخضر طبيعي' },
         infusion: { name: 'أعشاب', desc: 'لويزة، بابونج أو زعتر' },
         msemen: { name: 'مسمن', desc: 'فطيرة مورقة تقليدية' },
@@ -316,10 +405,11 @@ export const translations: Record<Language, Translations> = {
     gallery: {
       sectionTitle: 'المعرض',
       sectionSubtitle: 'اكتشف عالمنا',
+      realPhotos: 'صور حقيقية من مقهانا',
     },
     testimonials: {
-      sectionTitle: 'شهادات',
-      sectionSubtitle: 'ماذا يقول زوارنا',
+      sectionTitle: 'آراء الزوار',
+      sectionSubtitle: 'ماذا يقول زبائننا',
     },
     reservation: {
       sectionTitle: 'الحجز',
@@ -333,13 +423,15 @@ export const translations: Record<Language, Translations> = {
       submit: 'احجز',
       orWhatsApp: 'أو احجز عبر',
       whatsAppButton: 'واتساب',
+      orCall: 'أو اتصل بنا مباشرة',
     },
     footer: {
-      address: 'البيتي سوكو، مدينة طنجة القديمة، المغرب',
+      address: 'البيتي سوكو، المدينة القديمة، طنجة، المغرب',
       hours: 'ساعات العمل',
       hoursValue: '07:00 - 23:00',
       contact: 'اتصل بنا',
-      copyright: '© 2024 مقهى تنجيس. جميع الحقوق محفوظة.',
+      copyright: '© 2024 مقهى طنجيس. جميع الحقوق محفوظة.',
+      openDaily: 'مفتوح كل يوم',
     },
   },
 };

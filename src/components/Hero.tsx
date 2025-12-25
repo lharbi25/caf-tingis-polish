@@ -1,8 +1,11 @@
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import cafeExterior from '@/assets/cafe-exterior-1.jpg';
 
 export function Hero() {
   const { t } = useLanguage();
+
+  const phoneNumber = '+212600000000'; // Placeholder - update with real number
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -16,12 +19,12 @@ export function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background with overlay */}
+      {/* Background with real café photo */}
       <div className="absolute inset-0 z-0">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1920')`,
+            backgroundImage: `url('${cafeExterior}')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
@@ -38,7 +41,7 @@ export function Hero() {
 
         {/* Main Title */}
         <h1
-          className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground mb-6 animate-fade-in"
+          className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground mb-4 animate-fade-in"
           style={{ animationDelay: '0.4s' }}
         >
           {t.hero.title}
@@ -46,28 +49,49 @@ export function Hero() {
 
         {/* Subtitle */}
         <p
-          className="text-xl md:text-2xl text-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-in"
+          className="text-xl md:text-2xl text-foreground/80 mb-3 animate-fade-in"
           style={{ animationDelay: '0.6s' }}
         >
           {t.hero.subtitle}
         </p>
 
-        {/* CTA Buttons */}
+        {/* Emotional Subheadline */}
+        <p
+          className="text-lg md:text-xl text-primary/90 mb-10 max-w-2xl mx-auto animate-fade-in"
+          style={{ animationDelay: '0.7s' }}
+        >
+          {t.hero.emotionalSubtitle}
+        </p>
+
+        {/* CTA Buttons - 3 action buttons */}
         <div
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in"
           style={{ animationDelay: '0.8s' }}
         >
-          <button
-            onClick={() => scrollToSection('#menu')}
-            className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-gold-dark transition-colors duration-200"
+          {/* Call Now - Primary */}
+          <a
+            href={`tel:${phoneNumber}`}
+            className="flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-gold-dark transition-colors duration-200 min-w-[180px] justify-center text-lg"
           >
-            {t.hero.discoverMenu}
+            <Phone size={20} />
+            {t.hero.callNow}
+          </a>
+          
+          {/* Reserve Table - Secondary */}
+          <button
+            onClick={() => scrollToSection('#reservation')}
+            className="px-8 py-4 border-2 border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-colors duration-200 min-w-[180px] text-lg"
+          >
+            {t.hero.reserveTable}
           </button>
+          
+          {/* Our Location - Tertiary */}
           <button
-            onClick={() => scrollToSection('#history')}
-            className="px-8 py-3 border border-foreground/30 text-foreground rounded-full font-medium hover:border-primary hover:text-primary transition-colors duration-200"
+            onClick={() => scrollToSection('#contact')}
+            className="flex items-center gap-2 px-8 py-4 border border-foreground/30 text-foreground rounded-full font-medium hover:border-primary hover:text-primary transition-colors duration-200 min-w-[180px] justify-center text-lg"
           >
-            {t.hero.ourHistory}
+            <MapPin size={20} />
+            {t.hero.ourLocation}
           </button>
         </div>
 

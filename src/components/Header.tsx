@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Language } from '@/lib/i18n';
 
 export function Header() {
-  const { language, setLanguage, t, isRTL } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const phoneNumber = '+212600000000'; // Placeholder - update with real number
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,7 +79,7 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Right side - Language switcher + Reserve button */}
+          {/* Right side - Language switcher + Call + Reserve button */}
           <div className="hidden lg:flex items-center gap-4">
             {/* Language Switcher */}
             <div className="flex items-center gap-1 border border-border/50 rounded-full px-2 py-1">
@@ -96,6 +98,15 @@ export function Header() {
               ))}
             </div>
 
+            {/* Call Button */}
+            <a
+              href={`tel:${phoneNumber}`}
+              className="flex items-center gap-2 text-primary hover:text-gold-light transition-colors"
+            >
+              <Phone size={18} />
+              <span className="text-sm">{t.nav.callNow}</span>
+            </a>
+
             {/* Reserve Button */}
             <a
               href="#reservation"
@@ -109,14 +120,25 @@ export function Header() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-foreground p-2"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile - Call Button + Menu Button */}
+          <div className="lg:hidden flex items-center gap-3">
+            {/* Mobile Call Button - Always visible */}
+            <a
+              href={`tel:${phoneNumber}`}
+              className="flex items-center gap-1.5 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium"
+            >
+              <Phone size={16} />
+              <span>{t.nav.callNow}</span>
+            </a>
+            
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-foreground p-2"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -131,7 +153,7 @@ export function Header() {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className="px-4 py-3 text-foreground/80 hover:text-primary hover:bg-secondary/50 transition-colors duration-200"
+                  className="px-4 py-3 text-foreground/80 hover:text-primary hover:bg-secondary/50 transition-colors duration-200 text-lg"
                 >
                   {link.label}
                 </a>
@@ -143,7 +165,7 @@ export function Header() {
                   <button
                     key={lang.code}
                     onClick={() => setLanguage(lang.code)}
-                    className={`px-3 py-1.5 text-sm rounded-full transition-colors duration-200 ${
+                    className={`px-4 py-2 text-sm rounded-full transition-colors duration-200 ${
                       language === lang.code
                         ? 'bg-primary text-primary-foreground'
                         : 'border border-border text-foreground/70 hover:text-foreground'
@@ -162,7 +184,7 @@ export function Header() {
                     e.preventDefault();
                     scrollToSection('#reservation');
                   }}
-                  className="block w-full text-center bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium"
+                  className="block w-full text-center bg-primary text-primary-foreground px-6 py-4 rounded-full font-medium text-lg"
                 >
                   {t.nav.reserve}
                 </a>
