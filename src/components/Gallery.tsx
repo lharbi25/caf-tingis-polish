@@ -8,6 +8,9 @@ import cafeDetail2 from '@/assets/cafe-detail-2.jpg';
 import cafeDetail3 from '@/assets/cafe-detail-3.jpg';
 import cafeDetail4 from '@/assets/cafe-detail-4.jpg';
 import cafeDetail5 from '@/assets/cafe-detail-5.jpg';
+import cafeInterior1 from '@/assets/cafe-interior-1.jpg';
+import cafeBar from '@/assets/cafe-bar.jpg';
+import cafeTerrace from '@/assets/cafe-terrace.jpg';
 
 export function Gallery() {
   const { t, language } = useLanguage();
@@ -16,22 +19,36 @@ export function Gallery() {
     {
       src: cafeExterior1,
       alt: language === 'ar' ? 'واجهة المقهى' : language === 'fr' ? 'Façade du café' : 'Café exterior',
+      featured: true,
     },
     {
       src: cafeDetail1,
       alt: language === 'ar' ? 'أتاي بالنعناع' : language === 'fr' ? 'Thé à la menthe' : 'Mint tea',
     },
     {
-      src: cafeMain,
-      alt: language === 'ar' ? 'داخل المقهى' : language === 'fr' ? 'Intérieur du café' : 'Café interior',
+      src: cafeBar,
+      alt: language === 'ar' ? 'البار والقهوة' : language === 'fr' ? 'Le bar et café' : 'Bar and coffee',
+      featured: true,
     },
     {
       src: cafeDetail2,
       alt: language === 'ar' ? 'تفاصيل المقهى' : language === 'fr' ? 'Détails du café' : 'Café details',
     },
     {
+      src: cafeInterior1,
+      alt: language === 'ar' ? 'داخل المقهى التاريخي' : language === 'fr' ? 'Intérieur historique' : 'Historic interior',
+    },
+    {
+      src: cafeMain,
+      alt: language === 'ar' ? 'داخل المقهى' : language === 'fr' ? 'Intérieur du café' : 'Café interior',
+    },
+    {
       src: cafeExterior2,
       alt: language === 'ar' ? 'الشرفة' : language === 'fr' ? 'La terrasse' : 'The terrace',
+    },
+    {
+      src: cafeTerrace,
+      alt: language === 'ar' ? 'شرفة مقهى طنجيس' : language === 'fr' ? 'Terrasse Café Tingis' : 'Café Tingis terrace',
     },
     {
       src: cafeDetail3,
@@ -73,7 +90,7 @@ export function Gallery() {
             <div
               key={index}
               className={`overflow-hidden rounded-lg group cursor-pointer ${
-                index === 0 || index === 2 ? 'md:col-span-2 md:row-span-2' : ''
+                image.featured ? 'md:col-span-2 md:row-span-2' : ''
               }`}
             >
               <div className="aspect-square w-full h-full">
