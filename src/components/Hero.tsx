@@ -1,6 +1,6 @@
 import { ChevronDown, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import cafeExterior from '@/assets/cafe-exterior-1.jpg';
+import cafeExterior from '@/assets/cafe-hero.jpg';
 
 export function Hero() {
   const { t } = useLanguage();
