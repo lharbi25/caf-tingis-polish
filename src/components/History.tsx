@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import cafeHistory from '@/assets/cafe-history.jpg';
 
 export function History() {
   const { t } = useLanguage();
@@ -30,8 +31,8 @@ export function History() {
           <div className="relative">
             <div className="aspect-[4/3] overflow-hidden rounded-lg">
               <img
-                src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=800"
-                alt="Café Tingis Interior"
+                src={cafeHistory}
+                alt="Café Tingis - Espresso traditionnel"
                 className="w-full h-full object-cover"
               />
             </div>
