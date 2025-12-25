@@ -3,7 +3,6 @@ import { Camera } from 'lucide-react';
 import cafeExterior1 from '@/assets/cafe-exterior-1.jpg';
 import cafeMain from '@/assets/cafe-main.jpg';
 import cafeDetail1 from '@/assets/cafe-detail-1.jpg';
-import cafeDetail4 from '@/assets/cafe-detail-4.jpg';
 import cafeBar from '@/assets/cafe-bar.jpg';
 import cafeTerrace from '@/assets/cafe-terrace.jpg';
 
@@ -31,11 +30,6 @@ export function Gallery() {
     {
       src: cafeTerrace,
       alt: language === 'ar' ? 'شرفة مقهى طنجيس' : language === 'fr' ? 'Terrasse Café Tingis' : 'Café Tingis terrace',
-    },
-    {
-      src: cafeDetail4,
-      alt: language === 'ar' ? 'أجواء المقهى' : language === 'fr' ? 'Ambiance' : 'Atmosphere',
-      featured: true,
     },
   ];
 
