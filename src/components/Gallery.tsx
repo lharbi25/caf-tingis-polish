@@ -19,7 +19,6 @@ export function Gallery() {
     {
       src: cafeExterior1,
       alt: language === 'ar' ? 'واجهة المقهى' : language === 'fr' ? 'Façade du café' : 'Café exterior',
-      featured: true,
     },
     {
       src: cafeDetail1,
