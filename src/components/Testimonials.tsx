@@ -10,30 +10,30 @@ export function Testimonials() {
       name: language === 'ar' ? 'محمد ب.' : 'Mohammed B.',
       location: language === 'ar' ? 'طنجة' : language === 'fr' ? 'Tanger' : 'Tangier',
       text: language === 'fr' 
-        ? "Mon café du quartier. Chaque matin, je prends mon nous-nous ici depuis des années."
+        ? "Le meilleur endroit pour boire un café à Tanger ! L'ambiance est inoubliable."
         : language === 'en'
-        ? "My neighborhood café. Every morning, I've been having my nous-nous here for years."
-        : "مقهى الحي ديالي. كل صباح، كنشرب النص نص هنا من سنين.",
+        ? "The best place to have coffee in Tangier! The atmosphere is unforgettable."
+        : "أفضل مكان لشرب القهوة في طنجة! الأجواء لا تُنسى.",
       rating: 5,
     },
     {
-      name: language === 'ar' ? 'سعيد م.' : 'Said M.',
+      name: language === 'ar' ? 'ليلى م.' : 'Leila M.',
       location: language === 'ar' ? 'الرباط' : 'Rabat',
       text: language === 'fr'
-        ? "J'ai découvert ce café par hasard en visitant Tanger. L'ambiance authentique m'a conquis."
+        ? "Une expérience magnifique alliant histoire et confort. Je recommande vivement !"
         : language === 'en'
-        ? "I discovered this café by chance while visiting Tangier. The authentic atmosphere won me over."
-        : "لقيت هذا المقهى بالصدفة ملي زرت طنجة. الجو الأصيل عجبني بزاف.",
+        ? "A wonderful experience combining history and comfort. Highly recommend!"
+        : "تجربة رائعة تجمع بين التاريخ والراحة، أنصح الجميع بزيارته.",
       rating: 5,
     },
     {
-      name: language === 'ar' ? 'فاطمة ز.' : 'Fatima Z.',
+      name: language === 'ar' ? 'يوسف ز.' : 'Youssef Z.',
       location: language === 'ar' ? 'طنجة' : language === 'fr' ? 'Tanger' : 'Tangier',
       text: language === 'fr'
-        ? "L'atay est excellent et l'ambiance rappelle le Tanger d'autrefois. Simple et authentique."
+        ? "Leur café est délicieux et le service est très chaleureux."
         : language === 'en'
-        ? "The atay is excellent and the atmosphere reminds me of old Tangier. Simple and authentic."
-        : "الأتاي بنين والجو ديال زمان. بسيط وأصيل.",
+        ? "Their coffee is delicious and the service is very friendly."
+        : "قهوتهم لذيذة والخدمة ودودة جدًا.",
       rating: 5,
     },
   ];
