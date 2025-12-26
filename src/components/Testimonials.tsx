@@ -7,7 +7,7 @@ export function Testimonials() {
   // Realistic local testimonials - believable Moroccan reviews
   const testimonials = [
     {
-      name: language === 'ar' ? 'محمد ب.' : 'Mohammed B.',
+      name: language === 'ar' ? 'محمد بنعلي' : 'Mohammed Benali',
       location: language === 'ar' ? 'طنجة' : language === 'fr' ? 'Tanger' : 'Tangier',
       text: language === 'fr' 
         ? "Le meilleur endroit pour boire un café à Tanger ! L'ambiance est inoubliable."
@@ -17,7 +17,7 @@ export function Testimonials() {
       rating: 5,
     },
     {
-      name: language === 'ar' ? 'ليلى م.' : 'Leila M.',
+      name: language === 'ar' ? 'ليلى مرزوق' : 'Leila Marzouk',
       location: language === 'ar' ? 'الرباط' : 'Rabat',
       text: language === 'fr'
         ? "Une expérience magnifique alliant histoire et confort. Je recommande vivement !"
@@ -27,7 +27,7 @@ export function Testimonials() {
       rating: 5,
     },
     {
-      name: language === 'ar' ? 'يوسف ز.' : 'Youssef Z.',
+      name: language === 'ar' ? 'يوسف الزهراوي' : 'Youssef Zahraoui',
       location: language === 'ar' ? 'طنجة' : language === 'fr' ? 'Tanger' : 'Tangier',
       text: language === 'fr'
         ? "Leur café est délicieux et le service est très chaleureux."
