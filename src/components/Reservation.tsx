@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Calendar, Clock, Users, User, Phone, Mail } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
+import { BUSINESS_CONFIG } from '@/lib/constants';
 
 export function Reservation() {
   const { t, isRTL } = useLanguage();
@@ -36,11 +37,12 @@ export function Reservation() {
     const message = encodeURIComponent(
       `Bonjour, je souhaite réserver une table pour ${formData.guests} personnes.`
     );
-    window.open(`https://wa.me/212600000000?text=${message}`, '_blank');
+    const whatsappNumber = BUSINESS_CONFIG.phone.replace(/\D/g, '');
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
   };
 
   return (
-    <section id="reservation" className="py-20 md:py-32 bg-secondary/30">
+    <section id="reservation" className="pt-16 md:pt-0 py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -59,49 +61,61 @@ export function Reservation() {
             <div className="grid md:grid-cols-2 gap-6">
               {/* Name */}
               <div className="relative">
-                <User className={`absolute top-1/2 -translate-y-1/2 text-foreground/40 ${isRTL ? 'right-4' : 'left-4'}`} size={18} />
+                <label htmlFor="name" className="sr-only">{t.reservation.name}</label>
+                <User className={`absolute top-1/2 -translate-y-1/2 text-foreground/40 ${isRTL ? 'right-4' : 'left-4'}`} size={18} aria-hidden="true" />
                 <input
+                  id="name"
                   type="text"
                   required
                   placeholder={t.reservation.name}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className={`w-full bg-background border border-border rounded-lg py-3 text-foreground placeholder:text-foreground/40 focus:border-primary focus:outline-none transition-colors ${isRTL ? 'pr-12 pl-4' : 'pl-12 pr-4'}`}
+                  aria-label={t.reservation.name}
                 />
               </div>
 
               {/* Phone */}
               <div className="relative">
-                <Phone className={`absolute top-1/2 -translate-y-1/2 text-foreground/40 ${isRTL ? 'right-4' : 'left-4'}`} size={18} />
+                <label htmlFor="phone" className="sr-only">{t.reservation.phone}</label>
+                <Phone className={`absolute top-1/2 -translate-y-1/2 text-foreground/40 ${isRTL ? 'right-4' : 'left-4'}`} size={18} aria-hidden="true" />
                 <input
+                  id="phone"
                   type="tel"
                   required
                   placeholder={t.reservation.phone}
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className={`w-full bg-background border border-border rounded-lg py-3 text-foreground placeholder:text-foreground/40 focus:border-primary focus:outline-none transition-colors ${isRTL ? 'pr-12 pl-4' : 'pl-12 pr-4'}`}
+                  aria-label={t.reservation.phone}
                 />
               </div>
 
               {/* Email */}
               <div className="relative">
-                <Mail className={`absolute top-1/2 -translate-y-1/2 text-foreground/40 ${isRTL ? 'right-4' : 'left-4'}`} size={18} />
+                <label htmlFor="email" className="sr-only">{t.reservation.email}</label>
+                <Mail className={`absolute top-1/2 -translate-y-1/2 text-foreground/40 ${isRTL ? 'right-4' : 'left-4'}`} size={18} aria-hidden="true" />
                 <input
+                  id="email"
                   type="email"
                   placeholder={t.reservation.email}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className={`w-full bg-background border border-border rounded-lg py-3 text-foreground placeholder:text-foreground/40 focus:border-primary focus:outline-none transition-colors ${isRTL ? 'pr-12 pl-4' : 'pl-12 pr-4'}`}
+                  aria-label={t.reservation.email}
                 />
               </div>
 
               {/* Guests */}
               <div className="relative">
-                <Users className={`absolute top-1/2 -translate-y-1/2 text-foreground/40 ${isRTL ? 'right-4' : 'left-4'}`} size={18} />
+                <label htmlFor="guests" className="sr-only">{t.reservation.guests}</label>
+                <Users className={`absolute top-1/2 -translate-y-1/2 text-foreground/40 ${isRTL ? 'right-4' : 'left-4'}`} size={18} aria-hidden="true" />
                 <select
+                  id="guests"
                   value={formData.guests}
                   onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
                   className={`w-full bg-background border border-border rounded-lg py-3 text-foreground focus:border-primary focus:outline-none transition-colors appearance-none ${isRTL ? 'pr-12 pl-4' : 'pl-12 pr-4'}`}
+                  aria-label={t.reservation.guests}
                 >
                   {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                     <option key={num} value={num}>
@@ -113,25 +127,31 @@ export function Reservation() {
 
               {/* Date */}
               <div className="relative">
-                <Calendar className={`absolute top-1/2 -translate-y-1/2 text-foreground/40 ${isRTL ? 'right-4' : 'left-4'}`} size={18} />
+                <label htmlFor="date" className="sr-only">Date</label>
+                <Calendar className={`absolute top-1/2 -translate-y-1/2 text-foreground/40 ${isRTL ? 'right-4' : 'left-4'}`} size={18} aria-hidden="true" />
                 <input
+                  id="date"
                   type="date"
                   required
                   value={formData.date}
                   onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                   className={`w-full bg-background border border-border rounded-lg py-3 text-foreground focus:border-primary focus:outline-none transition-colors ${isRTL ? 'pr-12 pl-4' : 'pl-12 pr-4'}`}
+                  aria-label="Date"
                 />
               </div>
 
               {/* Time */}
               <div className="relative">
-                <Clock className={`absolute top-1/2 -translate-y-1/2 text-foreground/40 ${isRTL ? 'right-4' : 'left-4'}`} size={18} />
+                <label htmlFor="time" className="sr-only">Time</label>
+                <Clock className={`absolute top-1/2 -translate-y-1/2 text-foreground/40 ${isRTL ? 'right-4' : 'left-4'}`} size={18} aria-hidden="true" />
                 <input
+                  id="time"
                   type="time"
                   required
                   value={formData.time}
                   onChange={(e) => setFormData({ ...formData, time: e.target.value })}
                   className={`w-full bg-background border border-border rounded-lg py-3 text-foreground focus:border-primary focus:outline-none transition-colors ${isRTL ? 'pr-12 pl-4' : 'pl-12 pr-4'}`}
+                  aria-label="Time"
                 />
               </div>
             </div>

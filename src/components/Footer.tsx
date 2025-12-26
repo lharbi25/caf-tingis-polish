@@ -1,10 +1,11 @@
 import { MapPin, Clock, Phone, MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { BUSINESS_CONFIG } from '@/lib/constants';
 
 export function Footer() {
   const { t } = useLanguage();
 
-  const phoneNumber = '+212600000000'; // Placeholder - update with real number
+  const phoneNumber = BUSINESS_CONFIG.phone;
 
   return (
     <footer id="contact" className="py-16 border-t border-border/30">

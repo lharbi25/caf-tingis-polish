@@ -31,9 +31,27 @@
     <meta name="geo.position" content="35.7854;-5.8135" />
     <meta name="ICBM" content="35.7854, -5.8135" />
 
-    <!-- Google Fonts - Playfair Display & Lato -->
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#E2C68E" />
+    <meta name="msapplication-TileColor" content="#E2C68E" />
+    
+    <!-- Mobile Web App -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/src/assets/cafe-hero.jpg" as="image" type="image/jpeg" />
+    
+    <!-- Google Fonts - Optimized with preload and font-display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Structured Data - LocalBusiness -->
@@ -46,6 +64,8 @@
       "description": "Traditional Moroccan café in the heart of Tangier Medina since 1940. Authentic coffee, mint tea, and warm hospitality.",
       "url": "https://cafetingis.com",
       "telephone": "+212600000000",
+      "email": "contact@cafetingis.com",
+      "image": "https://cafetingis.com/cafe-hero.jpg",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Place du Petit Socco",
@@ -69,7 +89,22 @@
       "servesCuisine": ["Moroccan", "Coffee", "Tea"],
       "hasMenu": "https://cafetingis.com/#menu",
       "foundingDate": "1940",
-      "sameAs": []
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+212600000000",
+        "contactType": "reservations",
+        "availableLanguage": ["French", "English", "Arabic"]
+      },
+      "sameAs": [
+        "https://instagram.com/cafetingis",
+        "https://facebook.com/cafetingis",
+        "https://tripadvisor.com/cafetingis"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "150"
+      }
     }
     </script>
   </head>

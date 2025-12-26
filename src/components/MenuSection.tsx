@@ -54,7 +54,7 @@ export function MenuSection() {
         </div>
 
         {/* Category Tabs */}
-        <div className="flex justify-center gap-2 md:gap-4 mb-12">
+        <div className="flex justify-center gap-2 md:gap-4 mb-12" role="tablist">
           {categories.map((category) => {
             const Icon = category.icon;
             return (
@@ -66,8 +66,11 @@ export function MenuSection() {
                     ? 'bg-primary text-primary-foreground'
                     : 'bg-secondary text-foreground/70 hover:bg-secondary/80 hover:text-foreground'
                 }`}
+                role="tab"
+                aria-selected={activeCategory === category.id}
+                aria-controls={`menu-panel-${category.id}`}
               >
-                <Icon size={18} />
+                <Icon size={18} aria-hidden="true" />
                 <span className="hidden sm:inline">{category.label}</span>
               </button>
             );
@@ -75,7 +78,11 @@ export function MenuSection() {
         </div>
 
         {/* Menu Items Grid */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div 
+          className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+          role="tabpanel"
+          id={`menu-panel-${activeCategory}`}
+        >
           {menuItems[activeCategory].map((item, index) => (
             <div
               key={index}
