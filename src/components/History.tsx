@@ -32,8 +32,9 @@ export function History() {
             <div className="aspect-[4/3] overflow-hidden rounded-lg">
               <img
                 src={cafeHistory}
-                alt="Café Tingis - Espresso traditionnel"
+                alt="Historic interior of Café Tingis showing traditional Moroccan café seating with vintage decor and warm lighting, established since 1940"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             {/* Decorative frame */}

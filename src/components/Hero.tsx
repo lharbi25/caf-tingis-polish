@@ -1,23 +1,18 @@
 import { ChevronDown, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { scrollToSection } from '@/lib/scroll-utils';
+import { BUSINESS_CONFIG } from '@/lib/constants';
 import cafeExterior from '@/assets/cafe-hero.jpg';
 
 export function Hero() {
   const { t } = useLanguage();
 
-  const phoneNumber = '+212600000000'; // Placeholder - update with real number
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const phoneNumber = BUSINESS_CONFIG.phone;
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden"
     >
       {/* Background with real café photo */}
       <div className="absolute inset-0 z-0">
@@ -26,6 +21,8 @@ export function Hero() {
           style={{
             backgroundImage: `url('${cafeExterior}')`,
           }}
+          role="img"
+          aria-label="Café Tingis exterior showcasing historic Moroccan café architecture"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
       </div>
@@ -41,7 +38,7 @@ export function Hero() {
 
         {/* Main Title */}
         <h1
-          className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground mb-4 animate-fade-in"
+          className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-foreground mb-4 animate-fade-in"
           style={{ animationDelay: '0.4s' }}
         >
           {t.hero.title}
@@ -73,7 +70,7 @@ export function Hero() {
             href={`tel:${phoneNumber}`}
             className="flex items-center gap-2 px-6 sm:px-8 py-4 sm:py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-gold-dark transition-all duration-200 w-full sm:w-auto sm:min-w-[180px] justify-center text-base sm:text-lg shadow-lg hover:shadow-xl active:scale-95"
           >
-            <Phone size={20} />
+            <Phone size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
             {t.hero.callNow}
           </a>
           
@@ -90,7 +87,7 @@ export function Hero() {
             onClick={() => scrollToSection('#contact')}
             className="flex items-center gap-2 px-6 sm:px-8 py-4 sm:py-4 border border-foreground/30 text-foreground rounded-full font-medium hover:border-primary hover:text-primary transition-all duration-200 w-full sm:w-auto sm:min-w-[180px] justify-center text-base sm:text-lg active:scale-95"
           >
-            <MapPin size={20} />
+            <MapPin size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
             {t.hero.ourLocation}
           </button>
         </div>

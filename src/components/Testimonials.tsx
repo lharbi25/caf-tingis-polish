@@ -55,31 +55,34 @@ export function Testimonials() {
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <div
+            <article
               key={index}
               className="bg-secondary/30 rounded-lg p-8 border border-border/30 relative"
+              itemScope
+              itemType="https://schema.org/Review"
             >
               {/* Quote Icon */}
-              <Quote className="absolute top-6 right-6 text-primary/20" size={40} />
+              <Quote className="absolute top-6 right-6 text-primary/20" size={40} aria-hidden="true" />
 
               {/* Stars */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
+                <meta itemProp="ratingValue" content={testimonial.rating.toString()} />
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star key={i} size={16} className="fill-primary text-primary" />
+                  <Star key={i} size={16} className="fill-primary text-primary" aria-hidden="true" />
                 ))}
               </div>
 
               {/* Text */}
-              <p className="text-foreground/80 mb-6 leading-relaxed text-lg">
+              <p className="text-foreground/80 mb-6 leading-relaxed text-lg" itemProp="reviewBody">
                 "{testimonial.text}"
               </p>
 
               {/* Author */}
-              <div>
-                <div className="font-medium text-foreground">{testimonial.name}</div>
-                <div className="text-sm text-foreground/50">{testimonial.location}</div>
+              <div itemProp="author" itemScope itemType="https://schema.org/Person">
+                <div className="font-medium text-foreground" itemProp="name">{testimonial.name}</div>
+                <div className="text-sm text-foreground/50" itemProp="address">{testimonial.location}</div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

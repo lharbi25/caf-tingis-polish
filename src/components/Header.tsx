@@ -2,13 +2,16 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Language } from '@/lib/i18n';
+import { scrollToSection } from '@/lib/scroll-utils';
+import { getLanguageName } from '@/lib/i18n-helpers';
+import { BUSINESS_CONFIG } from '@/lib/constants';
 
 export function Header() {
   const { language, setLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const phoneNumber = '+212600000000'; // Placeholder - update with real number
+  const phoneNumber = BUSINESS_CONFIG.phone;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,11 +35,8 @@ export function Header() {
     { code: 'ar', label: 'ع' },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleScrollToSection = (href: string) => {
+    scrollToSection(href);
     setIsMobileMenuOpen(false);
   };
 
@@ -55,7 +55,7 @@ export function Header() {
             href="#home"
             onClick={(e) => {
               e.preventDefault();
-              scrollToSection('#home');
+              handleScrollToSection('#home');
             }}
             className="font-display text-2xl md:text-3xl text-primary font-semibold tracking-wide"
           >
@@ -70,7 +70,7 @@ export function Header() {
                 href={link.href}
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection(link.href);
+                  handleScrollToSection(link.href);
                 }}
                 className="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm uppercase tracking-wider"
               >
@@ -92,6 +92,8 @@ export function Header() {
                       ? 'bg-primary text-primary-foreground'
                       : 'text-foreground/70 hover:text-foreground'
                   }`}
+                  aria-label={`Switch to ${getLanguageName(lang.code)} language`}
+                  aria-pressed={language === lang.code}
                 >
                   {lang.label}
                 </button>
@@ -112,7 +114,7 @@ export function Header() {
               href="#reservation"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('#reservation');
+                handleScrollToSection('#reservation');
               }}
               className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-medium hover:bg-gold-dark transition-colors duration-200"
             >
@@ -134,7 +136,9 @@ export function Header() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-foreground p-2"
-              aria-label="Toggle menu"
+              aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -143,7 +147,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-background/98 backdrop-blur-md border-t border-border/30">
+          <div id="mobile-menu" className="lg:hidden bg-background/98 backdrop-blur-md border-t border-border/30">
             <nav className="flex flex-col py-4">
               {navLinks.map((link) => (
                 <a
@@ -151,7 +155,7 @@ export function Header() {
                   href={link.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection(link.href);
+                    handleScrollToSection(link.href);
                   }}
                   className="px-4 py-3 text-foreground/80 hover:text-primary hover:bg-secondary/50 transition-colors duration-200 text-lg"
                 >
@@ -170,6 +174,8 @@ export function Header() {
                         ? 'bg-primary text-primary-foreground'
                         : 'border border-border text-foreground/70 hover:text-foreground'
                     }`}
+                    aria-label={`Switch to ${getLanguageName(lang.code)} language`}
+                    aria-pressed={language === lang.code}
                   >
                     {lang.label}
                   </button>
@@ -182,7 +188,7 @@ export function Header() {
                   href="#reservation"
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection('#reservation');
+                    handleScrollToSection('#reservation');
                   }}
                   className="block w-full text-center bg-primary text-primary-foreground px-6 py-4 rounded-full font-medium text-lg"
                 >

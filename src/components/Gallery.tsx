@@ -12,24 +12,44 @@ export function Gallery() {
   const images = [
     {
       src: cafeInteriorNew,
-      alt: language === 'ar' ? 'داخل مقهى طنجيس' : language === 'fr' ? 'Intérieur Café Tingis' : 'Café Tingis interior',
+      alt: language === 'ar' 
+        ? 'داخل مقهى طنجيس مع الديكور المغربي التقليدي والإضاءة الدافئة' 
+        : language === 'fr' 
+        ? 'Intérieur de Café Tingis avec décor marocain traditionnel et éclairage chaleureux' 
+        : 'Café Tingis interior with traditional Moroccan décor and warm lighting',
     },
     {
       src: cafeDetail1,
-      alt: language === 'ar' ? 'أتاي بالنعناع' : language === 'fr' ? 'Thé à la menthe' : 'Mint tea',
+      alt: language === 'ar' 
+        ? 'أتاي بالنعناع الطازج يقدم في كأس تقليدي' 
+        : language === 'fr' 
+        ? 'Thé à la menthe fraîche servi dans un verre traditionnel' 
+        : 'Fresh mint tea served in traditional glass',
     },
     {
       src: cafeBar,
-      alt: language === 'ar' ? 'البار والقهوة' : language === 'fr' ? 'Le bar et café' : 'Bar and coffee',
+      alt: language === 'ar' 
+        ? 'البار والقهوة مع آلة الإسبريسو التقليدية' 
+        : language === 'fr' 
+        ? 'Le bar et café avec machine à espresso traditionnelle' 
+        : 'Bar and coffee counter with traditional espresso machine',
       featured: true,
     },
     {
       src: cafeMain,
-      alt: language === 'ar' ? 'داخل المقهى' : language === 'fr' ? 'Intérieur du café' : 'Café interior',
+      alt: language === 'ar' 
+        ? 'داخل المقهى يُظهر المقاعد والأجواء المريحة' 
+        : language === 'fr' 
+        ? 'Intérieur du café montrant les sièges et l\'ambiance confortable' 
+        : 'Café interior showing seating area and comfortable ambiance',
     },
     {
       src: cafeTerrace,
-      alt: language === 'ar' ? 'شرفة مقهى طنجيس' : language === 'fr' ? 'Terrasse Café Tingis' : 'Café Tingis terrace',
+      alt: language === 'ar' 
+        ? 'شرفة مقهى طنجيس بإطلالة على المدينة القديمة' 
+        : language === 'fr' 
+        ? 'Terrasse de Café Tingis avec vue sur la médina' 
+        : 'Café Tingis terrace with view of the medina',
     },
   ];
 
@@ -54,12 +74,12 @@ export function Gallery() {
         </div>
 
         {/* Image Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
           {images.map((image, index) => (
             <div
               key={index}
               className={`overflow-hidden rounded-lg group cursor-pointer ${
-                image.featured ? 'md:col-span-2 md:row-span-2' : ''
+                image.featured ? 'sm:col-span-2 md:col-span-2 md:row-span-2' : ''
               }`}
             >
               <div className="aspect-square w-full h-full">
