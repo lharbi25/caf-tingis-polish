@@ -46,18 +46,18 @@ export function Testimonials() {
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
             {t.testimonials.sectionTitle}
           </h2>
-          <p className="text-foreground/60 text-lg max-w-2xl mx-auto">
+          <p className="text-foreground/60 text-lg max-w-2xl mx-auto leading-relaxed">
             {t.testimonials.sectionSubtitle}
           </p>
-          <div className="w-24 h-1 bg-primary mx-auto mt-6" />
+          <div className="w-24 h-1 bg-primary mx-auto mt-6 rounded-full shadow-lg shadow-primary/20" />
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <article
               key={index}
-              className="bg-secondary/30 rounded-lg p-8 border border-border/30 relative"
+              className="bg-secondary/40 backdrop-blur-sm rounded-xl p-8 border border-border/30 relative hover:border-primary/30 hover:bg-secondary/50 hover:-translate-y-1 transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-primary/5"
               itemScope
               itemType="https://schema.org/Review"
             >
@@ -79,7 +79,7 @@ export function Testimonials() {
 
               {/* Author */}
               <div itemProp="author" itemScope itemType="https://schema.org/Person">
-                <div className="font-medium text-foreground" itemProp="name">{testimonial.name}</div>
+                <div className="font-medium text-foreground text-base" itemProp="name">{testimonial.name}</div>
                 <div className="text-sm text-foreground/50" itemProp="address">{testimonial.location}</div>
               </div>
             </article>

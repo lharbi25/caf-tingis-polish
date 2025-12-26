@@ -18,9 +18,13 @@ const Index = () => {
       <ContactStrip />
       <WhyChooseUs />
       <History />
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
       <MenuSection />
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
       <Gallery />
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
       <Testimonials />
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
       <Reservation />
       <Footer />
       <WhatsAppButton />

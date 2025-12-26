@@ -19,30 +19,30 @@ export function History() {
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
             {t.history.sectionTitle}
           </h2>
-          <p className="text-foreground/60 text-lg max-w-2xl mx-auto">
+          <p className="text-foreground/60 text-lg max-w-2xl mx-auto leading-relaxed">
             {t.history.sectionSubtitle}
           </p>
-          <div className="w-24 h-1 bg-primary mx-auto mt-6" />
+          <div className="w-24 h-1 bg-primary mx-auto mt-6 rounded-full shadow-lg shadow-primary/20" />
         </div>
 
         {/* Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
           {/* Image */}
-          <div className="relative">
-            <div className="aspect-[4/3] overflow-hidden rounded-lg">
+          <div className="relative order-1 lg:order-1">
+            <div className="aspect-[4/3] overflow-hidden rounded-xl shadow-2xl">
               <img
                 src={cafeHistory}
                 alt="Historic interior of Café Tingis showing traditional Moroccan café seating with vintage decor and warm lighting, established since 1940"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
                 loading="lazy"
               />
             </div>
             {/* Decorative frame */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-primary/30 rounded-lg -z-10" />
+            <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-primary/20 rounded-xl -z-10 shadow-xl" />
           </div>
 
           {/* Text Content */}
-          <div className="space-y-6">
+          <div className="space-y-7 order-2 lg:order-2">
             <p className="text-foreground/80 text-lg leading-relaxed">
               {t.history.paragraph1}
             </p>
@@ -56,16 +56,16 @@ export function History() {
         </div>
 
         {/* Timeline */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {timeline.map((item, index) => (
             <div
               key={index}
-              className="text-center p-6 bg-background/50 rounded-lg border border-border/50 hover:border-primary/50 transition-colors duration-300"
+              className="text-center p-6 bg-background/60 backdrop-blur-sm rounded-xl border border-border/50 hover:border-primary/50 hover:bg-background/80 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
             >
-              <div className="font-display text-3xl md:text-4xl text-primary mb-2">
+              <div className="font-display text-3xl md:text-4xl text-primary mb-2 drop-shadow-sm">
                 {item.year}
               </div>
-              <p className="text-foreground/70 text-sm">{item.desc}</p>
+              <p className="text-foreground/70 text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
