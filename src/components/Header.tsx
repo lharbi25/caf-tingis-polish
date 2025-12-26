@@ -5,6 +5,7 @@ import { Language } from '@/lib/i18n';
 import { scrollToSection } from '@/lib/scroll-utils';
 import { getLanguageName } from '@/lib/i18n-helpers';
 import { BUSINESS_CONFIG } from '@/lib/constants';
+import logoImage from '@/assets/logo.png';
 
 export function Header() {
   const { language, setLanguage, t } = useLanguage();
@@ -57,9 +58,16 @@ export function Header() {
               e.preventDefault();
               handleScrollToSection('#home');
             }}
-            className="font-display text-2xl md:text-3xl text-primary font-semibold tracking-wide"
+            className="flex items-center gap-3 group"
           >
-            Café Tingis
+            <img 
+              src={logoImage} 
+              alt="Café Tingis Logo" 
+              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            <span className="font-display text-2xl md:text-3xl text-primary font-semibold tracking-wide">
+              Café Tingis
+            </span>
           </a>
 
           {/* Desktop Navigation */}
