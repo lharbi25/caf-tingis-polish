@@ -36,24 +36,24 @@ export function Footer() {
               <Phone size={18} className="text-primary" />
               {t.footer.contact}
             </h4>
-            
+
             {/* Phone Button */}
             <a
               href={`tel:${phoneNumber}`}
-              className="flex items-center gap-3 bg-primary/10 hover:bg-primary/20 border border-primary/30 rounded-lg px-4 py-3 mb-3 transition-colors group"
+              className="flex items-center gap-3 bg-primary/10 hover:bg-primary/20 border border-primary/30 rounded-lg px-4 py-3 mb-3 transition-all duration-300 hover:shadow-md hover:shadow-primary/5 group"
             >
               <Phone size={20} className="text-primary" />
               <span className="text-foreground group-hover:text-primary transition-colors">
                 +212 5XX XXX XXX
               </span>
             </a>
-            
+
             {/* WhatsApp Button */}
             <a
               href={`https://wa.me/${phoneNumber.replace(/\D/g, '')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-green-500/10 hover:bg-green-500/20 border border-green-500/30 rounded-lg px-4 py-3 transition-colors group"
+              className="flex items-center gap-3 bg-green-500/10 hover:bg-green-500/20 border border-green-500/30 rounded-lg px-4 py-3 transition-all duration-300 hover:shadow-md hover:shadow-green-500/5 group"
             >
               <MessageCircle size={20} className="text-green-500" />
               <span className="text-foreground group-hover:text-green-500 transition-colors">
@@ -64,7 +64,7 @@ export function Footer() {
         </div>
 
         {/* Map - Larger and more prominent */}
-        <div className="mb-12 rounded-lg overflow-hidden border border-border/30">
+        <div className="mb-12 rounded-xl overflow-hidden border border-border/30 shadow-xl">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.5!2d-5.8135!3d35.7854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQ3JzA3LjQiTiA1wrA0OCc0OC42Ilc!5e0!3m2!1sfr!2sma!4v1"
             width="100%"
@@ -74,7 +74,7 @@ export function Footer() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Café Tingis Location"
-            className="grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+            className="grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
           />
         </div>
 

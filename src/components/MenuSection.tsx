@@ -47,10 +47,10 @@ export function MenuSection() {
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
             {t.menu.sectionTitle}
           </h2>
-          <p className="text-foreground/60 text-lg max-w-2xl mx-auto">
+          <p className="text-foreground/60 text-lg max-w-2xl mx-auto leading-relaxed">
             {t.menu.sectionSubtitle}
           </p>
-          <div className="w-24 h-1 bg-primary mx-auto mt-6" />
+          <div className="w-24 h-1 bg-primary mx-auto mt-6 rounded-full shadow-lg shadow-primary/20" />
         </div>
 
         {/* Category Tabs */}
@@ -61,10 +61,10 @@ export function MenuSection() {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center gap-2 px-4 md:px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`flex items-center gap-2 px-5 md:px-7 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeCategory === category.id
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-secondary text-foreground/70 hover:bg-secondary/80 hover:text-foreground'
+                    ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5'
+                    : 'bg-secondary text-foreground/70 hover:bg-secondary/80 hover:text-foreground hover:shadow-md'
                 }`}
                 role="tab"
                 aria-selected={activeCategory === category.id}
@@ -78,21 +78,21 @@ export function MenuSection() {
         </div>
 
         {/* Menu Items Grid */}
-        <div 
-          className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+        <div
+          className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto"
           role="tabpanel"
           id={`menu-panel-${activeCategory}`}
         >
           {menuItems[activeCategory].map((item, index) => (
             <div
               key={index}
-              className="flex justify-between items-start p-6 bg-secondary/30 rounded-lg border border-border/30 hover:border-primary/30 transition-colors duration-300"
+              className="flex justify-between items-start p-6 bg-secondary/40 backdrop-blur-sm rounded-xl border border-border/30 hover:border-primary/40 hover:bg-secondary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5"
             >
               <div className="flex-1">
-                <h3 className="font-display text-xl text-foreground mb-1">{item.name}</h3>
-                <p className="text-foreground/60 text-sm">{item.desc}</p>
+                <h3 className="font-display text-xl text-foreground mb-1.5">{item.name}</h3>
+                <p className="text-foreground/60 text-sm leading-relaxed">{item.desc}</p>
               </div>
-              <div className="font-display text-xl text-primary ml-4">{item.price}</div>
+              <div className="font-display text-xl text-primary ml-4 font-semibold">{item.price}</div>
             </div>
           ))}
         </div>

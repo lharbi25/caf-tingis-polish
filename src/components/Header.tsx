@@ -72,7 +72,7 @@ export function Header() {
                   e.preventDefault();
                   handleScrollToSection(link.href);
                 }}
-                className="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm uppercase tracking-wider"
+                className="text-foreground/80 hover:text-primary transition-all duration-300 text-sm uppercase tracking-wider hover:-translate-y-0.5 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -116,7 +116,7 @@ export function Header() {
                 e.preventDefault();
                 handleScrollToSection('#reservation');
               }}
-              className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-medium hover:bg-gold-dark transition-colors duration-200"
+              className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-medium hover:bg-gold-dark transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 active:translate-y-0"
             >
               {t.nav.reserve}
             </a>
@@ -127,15 +127,15 @@ export function Header() {
             {/* Mobile Call Button - Always visible */}
             <a
               href={`tel:${phoneNumber}`}
-              className="flex items-center gap-1.5 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium"
+              className="flex items-center gap-1.5 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium shadow-lg shadow-primary/20"
             >
               <Phone size={16} />
               <span>{t.nav.callNow}</span>
             </a>
-            
+
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-foreground p-2"
+              className="text-foreground p-2 hover:bg-secondary/50 rounded-lg transition-colors"
               aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu"
@@ -157,22 +157,22 @@ export function Header() {
                     e.preventDefault();
                     handleScrollToSection(link.href);
                   }}
-                  className="px-4 py-3 text-foreground/80 hover:text-primary hover:bg-secondary/50 transition-colors duration-200 text-lg"
+                  className="px-4 py-3 text-foreground/80 hover:text-primary hover:bg-secondary/50 transition-all duration-200 text-lg"
                 >
                   {link.label}
                 </a>
               ))}
-              
+
               {/* Language Switcher Mobile */}
               <div className="flex items-center gap-2 px-4 py-3 border-t border-border/30 mt-2">
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
                     onClick={() => setLanguage(lang.code)}
-                    className={`px-4 py-2 text-sm rounded-full transition-colors duration-200 ${
+                    className={`px-4 py-2 text-sm rounded-full transition-all duration-300 ${
                       language === lang.code
-                        ? 'bg-primary text-primary-foreground'
-                        : 'border border-border text-foreground/70 hover:text-foreground'
+                        ? 'bg-primary text-primary-foreground shadow-md shadow-primary/10'
+                        : 'border border-border text-foreground/70 hover:text-foreground hover:bg-secondary/50'
                     }`}
                     aria-label={`Switch to ${getLanguageName(lang.code)} language`}
                     aria-pressed={language === lang.code}
@@ -190,7 +190,7 @@ export function Header() {
                     e.preventDefault();
                     handleScrollToSection('#reservation');
                   }}
-                  className="block w-full text-center bg-primary text-primary-foreground px-6 py-4 rounded-full font-medium text-lg"
+                  className="block w-full text-center bg-primary text-primary-foreground px-6 py-4 rounded-full font-medium text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
                 >
                   {t.nav.reserve}
                 </a>

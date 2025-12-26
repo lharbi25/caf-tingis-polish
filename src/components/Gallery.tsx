@@ -61,13 +61,13 @@ export function Gallery() {
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
             {t.gallery.sectionTitle}
           </h2>
-          <p className="text-foreground/60 text-lg max-w-2xl mx-auto">
+          <p className="text-foreground/60 text-lg max-w-2xl mx-auto leading-relaxed">
             {t.gallery.sectionSubtitle}
           </p>
-          <div className="w-24 h-1 bg-primary mx-auto mt-6" />
-          
+          <div className="w-24 h-1 bg-primary mx-auto mt-6 rounded-full shadow-lg shadow-primary/20" />
+
           {/* Real Photos Badge */}
-          <div className="inline-flex items-center gap-2 mt-6 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
+          <div className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 bg-primary/10 border border-primary/30 rounded-full hover:bg-primary/15 transition-colors duration-300">
             <Camera size={16} className="text-primary" />
             <span className="text-primary text-sm font-medium">{t.gallery.realPhotos}</span>
           </div>
@@ -78,17 +78,19 @@ export function Gallery() {
           {images.map((image, index) => (
             <div
               key={index}
-              className={`overflow-hidden rounded-lg group cursor-pointer ${
+              className={`overflow-hidden rounded-xl group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
                 image.featured ? 'sm:col-span-2 md:col-span-2 md:row-span-2' : ''
               }`}
             >
-              <div className="aspect-square w-full h-full">
+              <div className="aspect-square w-full h-full relative">
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>
           ))}
