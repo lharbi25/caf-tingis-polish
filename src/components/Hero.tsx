@@ -1,4 +1,4 @@
-import { ChevronDown, Phone, MapPin } from 'lucide-react';
+import { Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { scrollToSection } from '@/lib/scroll-utils';
 import { BUSINESS_CONFIG } from '@/lib/constants';
